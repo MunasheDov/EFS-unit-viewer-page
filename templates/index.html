@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+>
+<style>
+html {
+	scroll-behavior: smooth;
+}
+
+td {
+	vertical-align: initial !important;
+}
+
+.unit-icon {
+	transform: scale(1.5);
+	image-rendering: pixelated;
+}
+.zero-value {
+    filter: grayscale(100%);
+    opacity: 0.2;
+}
+.grayscale {
+	filter: grayscale(40%);
+	opacity: 0.8;
+}
+.resource-element {
+	min-width: 5em;
+
+}
+.resource-container {
+	display: flex;
+}
+.tight-table {
+	table-layout: auto;
+	width: auto;
+}
+.combat-stat-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 0.5em;
+<!--	display: flex;
+	flex-direction: column;-->
+}
+.combat-stat {
+
+}
+
+</style>
+<head>
+    <title>EFS Units</title>
+</head>
+<body>
+
+	<table class="striped tight-table container">
+		{% for header in headers %}
+			<th>{{ header }}</th>
+		{% endfor %}
+    {% for unit in units %}
+        {% include 'entry.html' %}
+    {% endfor %}
+  </table>
+
+</body>
+</html>

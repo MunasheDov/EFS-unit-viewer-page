@@ -1,0 +1,2520 @@
+<!DOCTYPE html>
+<html>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+>
+<style>
+html {
+	scroll-behavior: smooth;
+}
+
+td {
+	vertical-align: initial !important;
+}
+
+.unit-icon {
+	transform: scale(1.5);
+	image-rendering: pixelated;
+}
+.zero-value {
+    filter: grayscale(100%);
+    opacity: 0.2;
+}
+.grayscale {
+	filter: grayscale(40%);
+	opacity: 0.8;
+}
+.resource-element {
+	min-width: 5em;
+
+}
+.resource-container {
+	display: flex;
+}
+.tight-table {
+	table-layout: auto;
+	width: auto;
+}
+.combat-stat-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 0.5em;
+<!--	display: flex;
+	flex-direction: column;-->
+}
+.combat-stat {
+
+}
+
+</style>
+<head>
+    <title>EFS Units</title>
+</head>
+<body>
+
+	<table class="striped tight-table container">
+		
+			<th>Name</th>
+		
+			<th>Art</th>
+		
+			<th>Turns</th>
+		
+			<th>Maintenance</th>
+		
+			<th>Resource costs</th>
+		
+			<th>Combat stats</th>
+		
+    
+        <tr  id="unit-id-11" >
+	<td>Stealth Ship</td>
+	<td><img class="unit-icon" src="images/units/11.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 3</td>
+	<td><img src="images/resources/cred.png"/> 500</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 200</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 50</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/singularities.png"/> 1</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">direct_sp</div>
+		<div class="combat-stat">7/70</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-12" >
+	<td>Cadiz Dreadnought</td>
+	<td><img class="unit-icon" src="images/units/12.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 5</td>
+	<td><img src="images/resources/cred.png"/> 1000</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 200</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 100</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 100</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 50</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/singularities.png"/> 4</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">ranged_sp</div>
+		<div class="combat-stat">4/90</div>
+	
+		<div class="combat-stat">direct_sp</div>
+		<div class="combat-stat">4/80</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-13" >
+	<td>Vlad Cruiser</td>
+	<td><img class="unit-icon" src="images/units/13.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 4</td>
+	<td><img src="images/resources/cred.png"/> 750</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 180</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 80</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 80</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 40</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/singularities.png"/> 3</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">ranged_sp</div>
+		<div class="combat-stat">4/80</div>
+	
+		<div class="combat-stat">direct_sp</div>
+		<div class="combat-stat">4/70</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-14" >
+	<td>Destroyer</td>
+	<td><img class="unit-icon" src="images/units/14.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 3</td>
+	<td><img src="images/resources/cred.png"/> 500</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 140</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/trace.png"/> 60</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 55</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/singularities.png"/> 2</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">ranged_sp</div>
+		<div class="combat-stat">4/30</div>
+	
+		<div class="combat-stat">direct_sp</div>
+		<div class="combat-stat">4/60</div>
+	
+		<div class="combat-stat">close_sp</div>
+		<div class="combat-stat">7/70</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-15" >
+	<td>Frigate</td>
+	<td><img class="unit-icon" src="images/units/15.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 400</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 100</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/trace.png"/> 40</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 45</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/singularities.png"/> 1</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">direct_sp</div>
+		<div class="combat-stat">4/45</div>
+	
+		<div class="combat-stat">close_sp</div>
+		<div class="combat-stat">7/60</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-16" >
+	<td>Carrier</td>
+	<td><img class="unit-icon" src="images/units/16.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 3</td>
+	<td><img src="images/resources/cred.png"/> 500</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 100</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 70</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/singularities.png"/> 3</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">close_sp</div>
+		<div class="combat-stat">4/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Carrier MkII</td>
+	<td><img class="unit-icon" src="images/units/16.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 850</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-16">
+		<div class="resource-element"><img src="images/units/16.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 50</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 10</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">direct_sp</div>
+		<div class="combat-stat">3/50</div>
+	
+		<div class="combat-stat">close_sp</div>
+		<div class="combat-stat">7/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-17" >
+	<td>Space Fighter</td>
+	<td><img class="unit-icon" src="images/units/17.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 150</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 35</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/trace.png"/> 25</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">direct_sp</div>
+		<div class="combat-stat">6/30</div>
+	
+		<div class="combat-stat">close_sp</div>
+		<div class="combat-stat">2/30</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Cyber Fighter</td>
+	<td><img class="unit-icon" src="images/units/17.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 200</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-17">
+		<div class="resource-element"><img src="images/units/17.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/wetware.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">direct_sp</div>
+		<div class="combat-stat">9/40</div>
+	
+		<div class="combat-stat">close_sp</div>
+		<div class="combat-stat">4/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-18" >
+	<td>Space Torp Bomber</td>
+	<td><img class="unit-icon" src="images/units/18.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 150</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 35</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/trace.png"/> 25</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">direct_sp</div>
+		<div class="combat-stat">2/30</div>
+	
+		<div class="combat-stat">close_sp</div>
+		<div class="combat-stat">6/80</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Martyr Torp Bomber</td>
+	<td><img class="unit-icon" src="images/units/18.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 200</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-18">
+		<div class="resource-element"><img src="images/units/18.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">direct_sp</div>
+		<div class="combat-stat">2/30</div>
+	
+		<div class="combat-stat">close_sp</div>
+		<div class="combat-stat">9/100</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-19" >
+	<td>Assault Lander</td>
+	<td><img class="unit-icon" src="images/units/19.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 400</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 100</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 60</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 100</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/singularities.png"/> 1</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">4/30</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">4/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-20" >
+	<td>Freighter</td>
+	<td><img class="unit-icon" src="images/units/20.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 200</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 150</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/singularities.png"/> 1</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">close_sp</div>
+		<div class="combat-stat">2/30</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Armored Freighter</td>
+	<td><img class="unit-icon" src="images/units/20.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 250</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-20">
+		<div class="resource-element"><img src="images/units/20.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 50</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">close_sp</div>
+		<div class="combat-stat">3/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-21" >
+	<td>Bulk Hauler</td>
+	<td><img class="unit-icon" src="images/units/21.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 4</td>
+	<td><img src="images/resources/cred.png"/> 300</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 300</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 40</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 100</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/singularities.png"/> 2</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">close_sp</div>
+		<div class="combat-stat">2/30</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Armored Bulk Hauler</td>
+	<td><img class="unit-icon" src="images/units/21.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 350</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-21">
+		<div class="resource-element"><img src="images/units/21.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 50</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">close_sp</div>
+		<div class="combat-stat">3/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-22" >
+	<td>Starbase</td>
+	<td><img class="unit-icon" src="images/units/22.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 3</td>
+	<td><img src="images/resources/cred.png"/> 0</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 250</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 50</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 120</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">ranged_sp</div>
+		<div class="combat-stat">3/70</div>
+	
+		<div class="combat-stat">direct_sp</div>
+		<div class="combat-stat">4/80</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Meson Starbase</td>
+	<td><img class="unit-icon" src="images/units/22.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 0</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-22">
+		<div class="resource-element"><img src="images/units/22.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 10</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">ranged_sp</div>
+		<div class="combat-stat">5/100</div>
+	
+		<div class="combat-stat">direct_sp</div>
+		<div class="combat-stat">6/100</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-23" >
+	<td>Submarine</td>
+	<td><img class="unit-icon" src="images/units/23.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 80</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 40</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">water</div>
+		<div class="combat-stat">1/95</div>
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/20</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-24" >
+	<td>Battleship</td>
+	<td><img class="unit-icon" src="images/units/24.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 3</td>
+	<td><img src="images/resources/cred.png"/> 120</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 80</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 15</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">indirect</div>
+		<div class="combat-stat">5/90</div>
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">4/40</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">6/60</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-25" >
+	<td>Destroyer</td>
+	<td><img class="unit-icon" src="images/units/25.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 60</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 40</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 10</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">water</div>
+		<div class="combat-stat">3/45</div>
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">7/50</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">3/50</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">3/50</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-26" >
+	<td>Carrier</td>
+	<td><img class="unit-icon" src="images/units/26.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 200</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 70</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">8/50</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-27" >
+	<td>Naval Transport</td>
+	<td><img class="unit-icon" src="images/units/27.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 50</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 40</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Blademaster</td>
+	<td><img class="unit-icon" src="images/units/45.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 0</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-45">
+		<div class="resource-element"><img src="images/units/45.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/cred.png"/> 2000</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 5</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 5</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">3/40</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">10/80</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-48" >
+	<td>Dervish</td>
+	<td><img class="unit-icon" src="images/units/48.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 30</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/cred.png"/> 3000</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/trace.png"/> 5</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 10</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">psy</div>
+		<div class="combat-stat">8/100</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-49" >
+	<td>Spy</td>
+	<td><img class="unit-icon" src="images/units/49.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 50</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-51">
+		<div class="resource-element"><img src="images/units/51.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/cred.png"/> 4000</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 25</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">1/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">2/5</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">7/80</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Assassin</td>
+	<td><img class="unit-icon" src="images/units/49.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 100</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-49">
+		<div class="resource-element"><img src="images/units/49.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/cred.png"/> 2000</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/biochems.png"/> 25</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 25</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">2/30</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">5/10</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">8/80</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Doppleganger</td>
+	<td><img class="unit-icon" src="images/units/49.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 200</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-49">
+		<div class="resource-element"><img src="images/units/49.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/cred.png"/> 3000</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/biochems.png"/> 25</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 50</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/50</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">5/15</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">9/100</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-51" >
+	<td>Officer Corp</td>
+	<td><img class="unit-icon" src="images/units/51.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 3</td>
+	<td><img src="images/resources/cred.png"/> 50</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/cred.png"/> 500</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">6/50</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-52" >
+	<td>Clergy</td>
+	<td><img class="unit-icon" src="images/units/52.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 0</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-51">
+		<div class="resource-element"><img src="images/units/51.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/gems.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-53" >
+	<td>Engineer</td>
+	<td><img class="unit-icon" src="images/units/53.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 4</td>
+	<td><img src="images/resources/cred.png"/> 50</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/cred.png"/> 100</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/food.png"/> 100</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 100</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">2/80</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-54" >
+	<td>Special Forces</td>
+	<td><img class="unit-icon" src="images/units/54.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 3</td>
+	<td><img src="images/resources/cred.png"/> 30</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 15</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 10</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">5/15</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">7/10</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">9/80</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Cybercorp</td>
+	<td><img class="unit-icon" src="images/units/54.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 50</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-54">
+		<div class="resource-element"><img src="images/units/54.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/wetware.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">7/30</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">9/15</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">10/80</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-56" >
+	<td>PTS Laser Canon</td>
+	<td><img class="unit-icon" src="images/units/56.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 3</td>
+	<td><img src="images/resources/cred.png"/> 100</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 45</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 10</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">2/40</div>
+	
+		<div class="combat-stat">ranged_sp</div>
+		<div class="combat-stat">6/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>PTS Meson Canon</td>
+	<td><img class="unit-icon" src="images/units/56.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 200</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-56">
+		<div class="resource-element"><img src="images/units/56.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">2/50</div>
+	
+		<div class="combat-stat">ranged_sp</div>
+		<div class="combat-stat">6/60</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-57" >
+	<td>PTS Missile Launcher</td>
+	<td><img class="unit-icon" src="images/units/57.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 3</td>
+	<td><img src="images/resources/cred.png"/> 50</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 45</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">indirect</div>
+		<div class="combat-stat">3/50</div>
+	
+		<div class="combat-stat">ranged_sp</div>
+		<div class="combat-stat">3/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-58" >
+	<td>Scout Tank</td>
+	<td><img class="unit-icon" src="images/units/58.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 20</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 40</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">5/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">5/40</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">5/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-59" >
+	<td>Med Tank</td>
+	<td><img class="unit-icon" src="images/units/59.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 35</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 40</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">5/60</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">4/50</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Assault Tank</td>
+	<td><img class="unit-icon" src="images/units/59.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 60</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-59">
+		<div class="resource-element"><img src="images/units/59.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 10</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">5/40</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">6/70</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">5/60</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-60" >
+	<td>Anti-infantry Tank</td>
+	<td><img class="unit-icon" src="images/units/60.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 45</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 40</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/trace.png"/> 5</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 15</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">6/30</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">7/40</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">8/80</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-61" >
+	<td>Mega Tank</td>
+	<td><img class="unit-icon" src="images/units/61.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 3</td>
+	<td><img src="images/resources/cred.png"/> 80</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 50</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">6/85</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">5/90</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-62" >
+	<td>Hover Tank</td>
+	<td><img class="unit-icon" src="images/units/62.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 120</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">5/40</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">5/60</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">5/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-63" >
+	<td>Hover Tank Killer</td>
+	<td><img class="unit-icon" src="images/units/63.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 120</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">5/40</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">7/70</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">3/20</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-64" >
+	<td>Hover Anti Air</td>
+	<td><img class="unit-icon" src="images/units/64.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 120</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 35</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">9/90</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">4/20</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-65" >
+	<td>Tank Killer</td>
+	<td><img class="unit-icon" src="images/units/65.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 35</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 40</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">7/70</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">3/20</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-66" >
+	<td>Hvy Tank Killer</td>
+	<td><img class="unit-icon" src="images/units/66.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 80</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-65">
+		<div class="resource-element"><img src="images/units/65.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">8/90</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">3/20</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-67" >
+	<td>SP Anti Air</td>
+	<td><img class="unit-icon" src="images/units/67.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 80</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 40</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">8/65</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">4/20</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-68" >
+	<td>SP Artillery</td>
+	<td><img class="unit-icon" src="images/units/68.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 80</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 40</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">indirect</div>
+		<div class="combat-stat">3/80</div>
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">4/30</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-69" >
+	<td>Assault Gun</td>
+	<td><img class="unit-icon" src="images/units/69.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 70</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 10</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">indirect</div>
+		<div class="combat-stat">5/80</div>
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">7/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-70" >
+	<td>Rocket Artillery</td>
+	<td><img class="unit-icon" src="images/units/70.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 65</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 40</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">indirect</div>
+		<div class="combat-stat">7/75</div>
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">7/75</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-71" >
+	<td>Pestulator Artillery</td>
+	<td><img class="unit-icon" src="images/units/71.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 3</td>
+	<td><img src="images/resources/cred.png"/> 90</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/biochems.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">indirect</div>
+		<div class="combat-stat">5/120</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">3/20</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-72" >
+	<td>Stealth Tank</td>
+	<td><img class="unit-icon" src="images/units/72.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 100</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 40</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">4/50</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">3/20</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-73" >
+	<td>Gunship</td>
+	<td><img class="unit-icon" src="images/units/73.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 150</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">water</div>
+		<div class="combat-stat">5/50</div>
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">2/50</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">6/90</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">5/50</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-74" >
+	<td>Atmos Fighter</td>
+	<td><img class="unit-icon" src="images/units/74.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 75</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 10</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">8/35</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">5/40</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">3/20</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Morph Fighter</td>
+	<td><img class="unit-icon" src="images/units/74.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 95</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-74">
+		<div class="resource-element"><img src="images/units/74.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/biochems.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">9/95</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">7/40</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">3/20</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-75" >
+	<td>Divebomber</td>
+	<td><img class="unit-icon" src="images/units/75.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 65</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 10</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">4/15</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">5/80</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">3/20</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Morph Divebomber</td>
+	<td><img class="unit-icon" src="images/units/75.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 85</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-75">
+		<div class="resource-element"><img src="images/units/75.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/biochems.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">6/35</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">7/80</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">3/20</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-76" >
+	<td>Strategic Bomber</td>
+	<td><img class="unit-icon" src="images/units/76.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 3</td>
+	<td><img src="images/resources/cred.png"/> 100</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 40</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 10</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">2/30</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">4/100</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">4/100</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-77" >
+	<td>Marauder Legion</td>
+	<td><img class="unit-icon" src="images/units/77.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 150</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-80">
+		<div class="resource-element"><img src="images/units/80.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 40</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">8/90</div>
+	
+		<div class="combat-stat">close_sp</div>
+		<div class="combat-stat">8/90</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-78" >
+	<td>Ranger Legion</td>
+	<td><img class="unit-icon" src="images/units/78.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 10</td>
+	<td><div  class="resource-container">
+	
+		
+		<a href="#unit-id-80">
+		<div class="resource-element"><img src="images/units/80.png"/><img src="images/icons/upgrade.png"/></div>
+		</a>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/biochems.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 50</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">5/50</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">7/60</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">7/80</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-79" >
+	<td>Xyll Warbeast</td>
+	<td><img class="unit-icon" src="images/units/79.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 10</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 5</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/biochems.png"/> 60</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">4/50</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">9/100</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-80" >
+	<td>Shock Legion</td>
+	<td><img class="unit-icon" src="images/units/80.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 20</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 5</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">6/70</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">7/80</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Gen Warrior Legion</td>
+	<td><img class="unit-icon" src="images/units/80.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 20</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/biochems.png"/> 30</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 5</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">8/40</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">8/100</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-81" >
+	<td>Assault Legion</td>
+	<td><img class="unit-icon" src="images/units/81.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 30</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 15</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">8/80</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">7/70</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-82" >
+	<td>Armor Legion</td>
+	<td><img class="unit-icon" src="images/units/82.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 20</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/monopols.png"/> 2</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">6/50</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">6/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Chem Shock Legion</td>
+	<td><img class="unit-icon" src="images/units/82.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 20</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 20</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/biochems.png"/> 30</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">3/20</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">6/50</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-83" >
+	<td>Infantry Legion</td>
+	<td><img class="unit-icon" src="images/units/83.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 5</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 8</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/30</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">2/10</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">4/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Heavy Inf Legion</td>
+	<td><img class="unit-icon" src="images/units/83.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 15</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 10</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 5</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 5</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/ceramsteel.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">5/50</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">4/65</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">4/40</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Fanatic Legion</td>
+	<td><img class="unit-icon" src="images/units/83.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 3</td>
+	<td><img src="images/resources/cred.png"/> 1</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 8</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 5</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">2/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">4/30</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">5/50</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-84" >
+	<td>Militia Legion</td>
+	<td><img class="unit-icon" src="images/units/84.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 5</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">3/10</div>
+	
+	</div></td>
+</tr>
+    
+        <tr >
+	<td>Tracker Legion</td>
+	<td><img class="unit-icon" src="images/units/84.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 1</td>
+	<td><img src="images/resources/cred.png"/> 5</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 5</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">3/10</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">6/30</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-85" >
+	<td>Anti-Aircraft</td>
+	<td><img class="unit-icon" src="images/units/85.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 10</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">7/35</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">2/20</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-86" >
+	<td>Anti-Tank Gun</td>
+	<td><img class="unit-icon" src="images/units/86.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 10</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">2/10</div>
+	
+		<div class="combat-stat">direct</div>
+		<div class="combat-stat">5/30</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">2/30</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-87" >
+	<td>Artillery</td>
+	<td><img class="unit-icon" src="images/units/87.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 10</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 20</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+		<div class="combat-stat">indirect</div>
+		<div class="combat-stat">2/40</div>
+	
+		<div class="combat-stat">air</div>
+		<div class="combat-stat">2/10</div>
+	
+		<div class="combat-stat">close</div>
+		<div class="combat-stat">2/30</div>
+	
+	</div></td>
+</tr>
+    
+        <tr  id="unit-id-88" >
+	<td>Plague Bomb</td>
+	<td><img class="unit-icon" src="images/units/88.png"/></td>
+	<td><span class="grayscale">&#x231b</span> 2</td>
+	<td><img src="images/resources/cred.png"/> 0</td>
+	<td><div  class="resource-container">
+	
+		
+		<div class="resource-element"><img src="images/resources/metal.png"/> 100</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/chemicals.png"/> 100</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/biochems.png"/> 200</div>
+		
+	
+		
+		<div class="resource-element"><img src="images/resources/electronics.png"/> 10</div>
+		
+	
+	</div></td>
+	<td><div class="combat-stat-container">
+	
+	</div></td>
+</tr>
+    
+  </table>
+
+</body>
+</html>
