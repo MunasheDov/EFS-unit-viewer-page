@@ -5,97 +5,104 @@ import json
 
 # Define the column names for the "stats" section
 stats_columns = [
-    "move_type", "kind", "move", "spot", "camo", "agility", "armor", "psy_def",
-    "water_acc", "water_dmg", "indirect_acc", "indirect_dmg", "air_acc", "air_dmg", "direct_acc", "direct_dmg",
-    "close_acc", "close_dmg",  "psy_acc", "psy_dmg", "ranged_sp_acc", "ranged_sp_dmg", "direct_sp_acc", "direct_sp_dmg", "close_sp_acc", "close_sp_dmg",
-    "cargo", "can_b_cargo", "unit_function", "crd_trn", "cred",
-    "food", "energy", "metal", "trace", "exotica", "chemicals", "biochems", "electronics",
-    "ceramsteel", "wetware", "monopols", "gems", "singularities",
-    "unit", "t_lvl", "bldgs", "owner", "turns_2_bld",
-    "tech_0", "tech_1", "tech_2", "tech_3", "tech_4", "tech_5", "tech_6", "tech_7", "tech_8", "tech_9",
-    "tax", "flock", "range", "eat", "rank", "rop", "disband",
-    "art", "animation", "icon"
+		"move_type", "kind", "move", "spot", "camo", "agility", "armor", "psy_def",
+		"water_acc", "water_dmg", "indirect_acc", "indirect_dmg", "air_acc", "air_dmg", "direct_acc", "direct_dmg",
+		"close_acc", "close_dmg",  "psy_acc", "psy_dmg", "ranged_sp_acc", "ranged_sp_dmg", "direct_sp_acc", "direct_sp_dmg", "close_sp_acc", "close_sp_dmg",
+		"cargo", "can_b_cargo", "unit_function", "crd_trn", "cred",
+		"food", "energy", "metal", "trace", "exotica", "chemicals", "biochems", "electronics",
+		"ceramsteel", "wetware", "monopols", "gems", "singularities",
+		"unit", "t_lvl", "bldgs", "owner", "turns_2_bld",
+		"tech_0", "tech_1", "tech_2", "tech_3", "tech_4", "tech_5", "tech_6", "tech_7", "tech_8", "tech_9",
+		"tax", "flock", "range", "eat", "rank", "rop", "disband",
+		"art", "animation", "icon"
 ]
 
 
 def format_combat(unit):
-  sections = stats_columns[stats_columns.index("water_acc"):stats_columns.index("close_sp_dmg")+1]
-  results = {}
-  stats = unit["stats"]
-  for i in range(0, len(sections)-1, 2):
-    acc, dmg = sections[i], sections[i+1]
-    if stats[acc] + stats[dmg] > 0:
-      results[acc[0:len(acc)-len("_acc")]] = str(stats[acc])+'/'+str(stats[dmg])
-  return results
+	sections = stats_columns[stats_columns.index("water_acc"):stats_columns.index("close_sp_dmg")+1]
+	results = {}
+	stats = unit["stats"]
+	for i in range(0, len(sections)-1, 2):
+		acc, dmg = sections[i], sections[i+1]
+		if stats[acc] + stats[dmg] > 0:
+			results[acc[0:len(acc)-len("_acc")]] = str(stats[acc])+'/'+str(stats[dmg])
+	return results
 
 def format_behavior(unit):
-  sections = stats_columns[stats_columns.index("move"):stats_columns.index("psy_def")+1]
-  results = {}
-  stats = unit["stats"]
-  for item in sections:
-      results[item] = stats[item]
-  return results
+	sections = stats_columns[stats_columns.index("move"):stats_columns.index("psy_def")+1]
+	results = {}
+	stats = unit["stats"]
+	for item in sections:
+			results[item] = stats[item]
+	return results
 
 def parse_quoted_pairs(input_string):
-    # Use regex to match pairs of quoted strings
-    pattern = r'"([^"]+)"'
-    # Find all matches and return as list of tuples
-    return re.findall(pattern, input_string)
+		# Use regex to match pairs of quoted strings
+		pattern = r'"([^"]+)"'
+		# Find all matches and return as list of tuples
+		return re.findall(pattern, input_string)
 
 def map_keys_to_numbers(keys, number_string):
-    values = number_string.split()
-    for i in range(len(values)):
-      	values[i] = int(values[i]) if values[i].isdigit() else values[i]
+		values = number_string.split()
+		for i in range(len(values)):
+				values[i] = int(values[i]) if values[i].isdigit() else values[i]
 
 
-    #if len(keys) != len(numbers):
-    #    raise ValueError("Number of keys does not match number of values")
-    return dict(zip(keys, values))
+		#if len(keys) != len(numbers):
+		#    raise ValueError("Number of keys does not match number of values")
+		return dict(zip(keys, values))
 
 def parse_game_data(file_path):
-    units = []
-    current_unit = {}
-    last_sprite_index = 0
-    base_type = False
-    with open(file_path, 'r') as file:
-        for line in file:
-            line = line.strip()
-            if not line or line.startswith('//'):
-                continue
+		units = []
+		base_types = []
+		current_unit = {}
+		last_sprite_index = 0
+		base_type = False
+		unit_count = 0
+		with open(file_path, 'r') as file:
+				for line in file:
+						line = line.strip()
+						if not line or line.startswith('//'):
+								continue
 
-            if line.startswith('{'):
-                current_unit = {}
-                last_sprite_index = int(line[1:])
-                base_type = True
-                continue
+						if line.startswith('{'):
+								current_unit = {}
+								last_sprite_index = int(line[1:])
+								base_type = True
+								continue
 
-            if line.startswith('}'):
-              continue
+						if line.startswith('}'):
+							continue
 
-            current_unit["index"] = len(units)
-            current_unit["sprite_index"] = last_sprite_index
 
-            current_unit["is_base_type"] = base_type
-            base_type = False
-            parts = parse_quoted_pairs(line)
+						current_unit["index"] = len(units)
+						current_unit["sprite_index"] = last_sprite_index
 
-            current_unit["name"]   = parts[parts.index("name")+1]
-            current_unit["abbrev"] = parts[parts.index("abbrev")+1]
+						current_unit["is_base_type"] = base_type
 
-            stats = map_keys_to_numbers(stats_columns, parts[parts.index("stats")+1])
-            current_unit["stats"]  = stats
+						base_type = False
+						parts = parse_quoted_pairs(line)
 
-            art_idx = parts.index("art")
-            current_unit["art"] = {
-              "animation": parts[art_idx+1],
-              "icon": parts[art_idx+2]
-            }
-            current_unit["sprite_name"] = last_sprite_index
-            if current_unit["art"]["icon"] != "efsunit.bin" and current_unit["art"]["icon"] != "same":
-              current_unit["sprite_name"] = current_unit["art"]["icon"]
-            units.append(current_unit)
-            current_unit = {}
-    return units
+						current_unit["name"]   = parts[parts.index("name")+1]
+						current_unit["abbrev"] = parts[parts.index("abbrev")+1]
+
+						stats = map_keys_to_numbers(stats_columns, parts[parts.index("stats")+1])
+						current_unit["stats"]  = stats
+
+						art_idx = parts.index("art")
+						current_unit["art"] = {
+							"animation": parts[art_idx+1],
+							"icon": parts[art_idx+2]
+						}
+						current_unit["sprite_name"] = last_sprite_index
+						if current_unit["art"]["icon"] != "efsunit.bin" and current_unit["art"]["icon"] != "same":
+							current_unit["sprite_name"] = current_unit["art"]["icon"]
+						units.append(current_unit)
+						if current_unit["is_base_type"]:
+							base_types.append(unit_count)
+						current_unit = {}
+						unit_count += 1
+		return units, base_types
 
 # Test with your provided sample data
 sample_data = """
@@ -125,7 +132,7 @@ enable_behavior_stats = True
 
 from pathlib import Path
 unit_dat_path = Path(r'C:\Program Files (x86)\Steam\steamapps\common\Emperor of the Fading Suns\DAT\UNIT.DAT')
-units = parse_game_data(unit_dat_path)
+units, base_types = parse_game_data(unit_dat_path)
 #output = [ (u["name"], {"metal": u["stats"]["metal"]}) for u in units ]
 8
 output = []
@@ -136,14 +143,16 @@ headers.append("maintenance")
 
 headers.append("Resource Costs")
 if enable_combat_stats:
-  headers.append("Weapons")
+	headers.append("Weapons")
 if enable_behavior_stats:
 	headers.append("Stats")
 #headers.append("firebirds")
 #headers.extend(stats_columns[stats_columns.index("food"):stats_columns.index("singularities")+1])
 headers = map(str.capitalize, headers)
 
-
+for i in range(len(units)):
+	units[i]["sprite_name"] = str(units[i]["sprite_name"])
+	units[i]["sprite_name"] = units[i]["sprite_name"].replace(".bmp", "")
 
 for unit in units:
 	# expand truncated names
@@ -162,21 +171,29 @@ for unit in units:
 	cur = {"name": name}
 	cur["index"] = unit["index"]
 	cur["is_base_type"] = unit["is_base_type"]
-	
+
 	cur["sprite_index"] = unit["sprite_index"]
-	cur["sprite_name"] = str(unit["sprite_name"])
-	cur["sprite_name"] = cur["sprite_name"].replace(".bmp", "")
+	cur["sprite_name"] = unit["sprite_name"]
 
 	cur["turns_2_bld"] = unit["stats"]["turns_2_bld"]
 	cur["crd_trn"] = unit["stats"]["crd_trn"]
 	cur["costs"] = {}
 	if enable_combat_stats:
-	  cur["combat"] = format_combat(unit)
+		cur["combat"] = format_combat(unit)
 	if enable_behavior_stats:
-	  cur["behavior"] = format_behavior(unit)
+		cur["behavior"] = format_behavior(unit)
+
+
 
 	if int(unit["stats"]["unit"]) > -1:
-		cur["costs"]["unit"] = unit["stats"]["unit"]
+		idx_offset = 0
+		if int(unit["stats"]["t_lvl"]) > -1:
+			idx_offset = int(unit["stats"]["t_lvl"])
+		unit_idx = int(unit["stats"]["unit"])
+		cur["costs"]["unit"] = units[base_types[unit_idx]+idx_offset]["sprite_name"]
+
+
+
 	if unit["stats"]["cred"] > 0:
 		cur["costs"]["cred"] = unit["stats"]["cred"]
 
@@ -186,7 +203,7 @@ for unit in units:
 			cur["costs"][key] = unit["stats"][key]
 		total += unit["stats"][key]
 	if total > 0:
-	  output.append(cur)
+		output.append(cur)
 
 #print(output)
 
