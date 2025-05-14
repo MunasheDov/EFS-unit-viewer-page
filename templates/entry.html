@@ -1,6 +1,6 @@
 <tr {% if unit.is_base_type %} id="unit-id-{{ unit.sprite_index }}" {% endif %}>
 	<td>{{ unit.name }}</td>
-	<td><img class="unit-icon" src="images/units/{{ unit.sprite_index }}.png"/></td>
+	<td><img class="unit-icon" src="images/units/{{ unit.sprite_name }}.png"/></td>
 	<td><span class="grayscale">&#x231b</span> {{ unit.turns_2_bld }}</td>
 	<td><img src="images/resources/cred.png"/> {{ unit.crd_trn }}</td>
 	<td><div  class="resource-container">
@@ -18,6 +18,12 @@
 	{% for key, value in unit.combat.items() %}
 		<div class="combat-stat">{{ key }}</div>
 		<div class="combat-stat">{{ value }}</div>
+	{% endfor %}
+	</div></td>
+	<td><div class="behavior-stat-container">
+	{% for key, value in unit.behavior.items() %}
+		<div class="behavior-stat">{{ key }}</div>
+		<div class="behavior-stat">{{ value }}</div>
 	{% endfor %}
 	</div></td>
 </tr>

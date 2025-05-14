@@ -5,7 +5,7 @@ import json
 
 # Define the column names for the "stats" section
 stats_columns = [
-    "move_type", "kind", "move", "spot", "camo", "ag", "armor", "psy_def",
+    "move_type", "kind", "move", "spot", "camo", "agility", "armor", "psy_def",
     "water_acc", "water_dmg", "indirect_acc", "indirect_dmg", "air_acc", "air_dmg", "direct_acc", "direct_dmg",
     "close_acc", "close_dmg",  "psy_acc", "psy_dmg", "ranged_sp_acc", "ranged_sp_dmg", "direct_sp_acc", "direct_sp_dmg", "close_sp_acc", "close_sp_dmg",
     "cargo", "can_b_cargo", "unit_function", "crd_trn", "cred",
@@ -13,7 +13,8 @@ stats_columns = [
     "ceramsteel", "wetware", "monopols", "gems", "singularities",
     "unit", "t_lvl", "bldgs", "owner", "turns_2_bld",
     "tech_0", "tech_1", "tech_2", "tech_3", "tech_4", "tech_5", "tech_6", "tech_7", "tech_8", "tech_9",
-    "tax", "flock", "range", "eat", "rank", "rop", "disband"
+    "tax", "flock", "range", "eat", "rank", "rop", "disband",
+    "art", "animation", "icon"
 ]
 
 
@@ -27,6 +28,13 @@ def format_combat(unit):
       results[acc[0:len(acc)-len("_acc")]] = str(stats[acc])+'/'+str(stats[dmg])
   return results
 
+def format_behavior(unit):
+  sections = stats_columns[stats_columns.index("move"):stats_columns.index("psy_def")+1]
+  results = {}
+  stats = unit["stats"]
+  for item in sections:
+      results[item] = stats[item]
+  return results
 
 def parse_quoted_pairs(input_string):
     # Use regex to match pairs of quoted strings
@@ -66,13 +74,13 @@ def parse_game_data(file_path):
 
             current_unit["index"] = len(units)
             current_unit["sprite_index"] = last_sprite_index
+
             current_unit["is_base_type"] = base_type
             base_type = False
             parts = parse_quoted_pairs(line)
 
             current_unit["name"]   = parts[parts.index("name")+1]
             current_unit["abbrev"] = parts[parts.index("abbrev")+1]
-
 
             stats = map_keys_to_numbers(stats_columns, parts[parts.index("stats")+1])
             current_unit["stats"]  = stats
@@ -82,6 +90,9 @@ def parse_game_data(file_path):
               "animation": parts[art_idx+1],
               "icon": parts[art_idx+2]
             }
+            current_unit["sprite_name"] = last_sprite_index
+            if current_unit["art"]["icon"] != "efsunit.bin" and current_unit["art"]["icon"] != "same":
+              current_unit["sprite_name"] = current_unit["art"]["icon"]
             units.append(current_unit)
             current_unit = {}
     return units
@@ -110,6 +121,7 @@ sample_data = """
 # os.unlink(temp_file_path)
 
 enable_combat_stats = True
+enable_behavior_stats = True
 
 from pathlib import Path
 unit_dat_path = Path(r'C:\Program Files (x86)\Steam\steamapps\common\Emperor of the Fading Suns\DAT\UNIT.DAT')
@@ -124,7 +136,9 @@ headers.append("maintenance")
 
 headers.append("Resource Costs")
 if enable_combat_stats:
-  headers.append("Combat Stats")
+  headers.append("Weapons")
+if enable_behavior_stats:
+	headers.append("Stats")
 #headers.append("firebirds")
 #headers.extend(stats_columns[stats_columns.index("food"):stats_columns.index("singularities")+1])
 headers = map(str.capitalize, headers)
@@ -134,22 +148,32 @@ headers = map(str.capitalize, headers)
 for unit in units:
 	# expand truncated names
 	name = unit["name"].replace("Lgn", "Legion")
+
 	name = name.replace("Bmbr", "Bomber")
 	name = name.replace("Bmber", "Bomber")
 
 	name = name.replace("Artillery", "Art")
 	name = name.replace("Art", "Artillery")
 
+	name = name.replace("Hvy", "Heavy")
+
+	name = name.replace("Torp", "Torpedo")
 
 	cur = {"name": name}
 	cur["index"] = unit["index"]
 	cur["is_base_type"] = unit["is_base_type"]
+	
 	cur["sprite_index"] = unit["sprite_index"]
+	cur["sprite_name"] = str(unit["sprite_name"])
+	cur["sprite_name"] = cur["sprite_name"].replace(".bmp", "")
+
 	cur["turns_2_bld"] = unit["stats"]["turns_2_bld"]
 	cur["crd_trn"] = unit["stats"]["crd_trn"]
 	cur["costs"] = {}
 	if enable_combat_stats:
 	  cur["combat"] = format_combat(unit)
+	if enable_behavior_stats:
+	  cur["behavior"] = format_behavior(unit)
 
 	if int(unit["stats"]["unit"]) > -1:
 		cur["costs"]["unit"] = unit["stats"]["unit"]

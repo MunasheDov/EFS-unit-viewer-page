@@ -11,10 +11,13 @@ html {
 
 td {
 	vertical-align: initial !important;
+	padding-top: 4px;
+	padding-bottom: 4px;
+
 }
 
 .unit-icon {
-	transform: scale(1.5);
+	transform: scale(2);
 	image-rendering: pixelated;
 }
 .zero-value {
@@ -40,13 +43,21 @@ td {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	column-gap: 0.5em;
+
 <!--	display: flex;
 	flex-direction: column;-->
 }
 .combat-stat {
-
+	font-size: 0.8em;
 }
-
+.behavior-stat-container {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	column-gap: 0.5em;
+}
+.behavior-stat {
+	font-size: 0.8em;
+}
 </style>
 <head>
     <title>EFS Units</title>
