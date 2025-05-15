@@ -14,6 +14,7 @@
 		{% endif %}
 	{% endfor %}
 	</div></td>
+	<td><img class="unit-icon" src="images/units/{{ unit.sprite_name }}.png"/></td>
 	<td><div class="combat-stat-container">
 	{% for key, value in unit.combat.items() %}
 		<div class="combat-stat">{{ key }}</div>

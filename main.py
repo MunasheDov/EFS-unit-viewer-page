@@ -142,6 +142,8 @@ headers.append("turns")
 headers.append("maintenance")
 
 headers.append("Resource Costs")
+if enable_combat_stats or enable_behavior_stats:
+	headers.append("art")
 if enable_combat_stats:
 	headers.append("Weapons")
 if enable_behavior_stats:
