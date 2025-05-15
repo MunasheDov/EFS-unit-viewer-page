@@ -1,5 +1,5 @@
 <tr {% if unit.is_base_type %} id="unit-id-{{ unit.sprite_index }}" {% endif %}>
-	<td>{{ unit.name }}</td>
+	<td class="unit-name">{{ unit.name }}</td>
 	<td><img class="unit-icon" src="images/units/{{ unit.sprite_name }}.png"/></td>
 	<td><span class="grayscale">&#x231b</span> {{ unit.turns_2_bld }}</td>
 	<td><img src="images/resources/cred.png"/> {{ unit.crd_trn }}</td>

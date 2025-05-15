@@ -58,13 +58,44 @@ td {
 .behavior-stat {
 	font-size: 0.8em;
 }
+.dhide {
+	display: none !important;
+}
+.unit-name {}
 </style>
+<script>
+
+function updateSearch(event) {
+  const tableBody = document.querySelector("tbody");
+  const textbox = document.getElementById("search");
+  const search = textbox.value.toLowerCase().trim();
+
+  // Reset all rows to visible
+  tableBody.querySelectorAll("tr").forEach(row => {
+    row.classList.toggle("dhide", false);
+  });
+
+  // If search term exists, hide non-matching rows
+  if (search.length > 0) {
+    const terms = search.split(",").map(term => term.trim()).filter(term => term.length > 0);
+    tableBody.querySelectorAll("tr").forEach(row => {
+      const nameCell = row.querySelector(".unit-name");
+      if (nameCell) {
+        const name = nameCell.textContent.toLowerCase();
+        if (!terms.some(term => name.includes(term))) {
+          row.classList.toggle("dhide", true);
+        }
+      }
+    });
+  }
+}
+</script>
 <head>
     <title>EFS Units</title>
 </head>
 <body>
-
-	<table class="striped tight-table container">
+	<input type="text" id="search" class="search_input" placeholder="Filter units by comma-separated names: tank, infantry, armor legion" aria-label="Filer units by name" onkeyup="updateSearch(event)">
+	<table id="main_container" class="striped tight-table container">
 		
 			<th>Name</th>
 		
@@ -82,7 +113,7 @@ td {
 		
     
         <tr  id="unit-id-11" >
-	<td>Stealth Ship</td>
+	<td class="unit-name">Stealth Ship</td>
 	<td><img class="unit-icon" src="images/units/11.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 3</td>
 	<td><img src="images/resources/cred.png"/> 500</td>
@@ -135,7 +166,7 @@ td {
 </tr>
     
         <tr  id="unit-id-12" >
-	<td>Cadiz Dreadnought</td>
+	<td class="unit-name">Cadiz Dreadnought</td>
 	<td><img class="unit-icon" src="images/units/12.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 5</td>
 	<td><img src="images/resources/cred.png"/> 1000</td>
@@ -195,7 +226,7 @@ td {
 </tr>
     
         <tr  id="unit-id-13" >
-	<td>Vlad Cruiser</td>
+	<td class="unit-name">Vlad Cruiser</td>
 	<td><img class="unit-icon" src="images/units/13.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 4</td>
 	<td><img src="images/resources/cred.png"/> 750</td>
@@ -255,7 +286,7 @@ td {
 </tr>
     
         <tr  id="unit-id-14" >
-	<td>Destroyer</td>
+	<td class="unit-name">Destroyer</td>
 	<td><img class="unit-icon" src="images/units/14.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 3</td>
 	<td><img src="images/resources/cred.png"/> 500</td>
@@ -318,7 +349,7 @@ td {
 </tr>
     
         <tr  id="unit-id-15" >
-	<td>Frigate</td>
+	<td class="unit-name">Frigate</td>
 	<td><img class="unit-icon" src="images/units/15.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 400</td>
@@ -378,7 +409,7 @@ td {
 </tr>
     
         <tr  id="unit-id-16" >
-	<td>Carrier</td>
+	<td class="unit-name">Carrier</td>
 	<td><img class="unit-icon" src="images/units/16.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 3</td>
 	<td><img src="images/resources/cred.png"/> 500</td>
@@ -435,7 +466,7 @@ td {
 </tr>
     
         <tr >
-	<td>Carrier MkII</td>
+	<td class="unit-name">Carrier MkII</td>
 	<td><img class="unit-icon" src="images/units/16.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 850</td>
@@ -493,7 +524,7 @@ td {
 </tr>
     
         <tr  id="unit-id-17" >
-	<td>Space Fighter</td>
+	<td class="unit-name">Space Fighter</td>
 	<td><img class="unit-icon" src="images/units/17.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 150</td>
@@ -549,7 +580,7 @@ td {
 </tr>
     
         <tr >
-	<td>Cyber Fighter</td>
+	<td class="unit-name">Cyber Fighter</td>
 	<td><img class="unit-icon" src="images/units/ARCHANGEL.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 200</td>
@@ -599,7 +630,7 @@ td {
 </tr>
     
         <tr  id="unit-id-18" >
-	<td>Space Torpedo Bomber</td>
+	<td class="unit-name">Space Torpedo Bomber</td>
 	<td><img class="unit-icon" src="images/units/18.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 150</td>
@@ -655,7 +686,7 @@ td {
 </tr>
     
         <tr >
-	<td>Martyr Torpedo Bomber</td>
+	<td class="unit-name">Martyr Torpedo Bomber</td>
 	<td><img class="unit-icon" src="images/units/MARTYR.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 200</td>
@@ -705,7 +736,7 @@ td {
 </tr>
     
         <tr  id="unit-id-19" >
-	<td>Assault Lander</td>
+	<td class="unit-name">Assault Lander</td>
 	<td><img class="unit-icon" src="images/units/19.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 400</td>
@@ -761,7 +792,7 @@ td {
 </tr>
     
         <tr  id="unit-id-20" >
-	<td>Freighter</td>
+	<td class="unit-name">Freighter</td>
 	<td><img class="unit-icon" src="images/units/20.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 200</td>
@@ -810,7 +841,7 @@ td {
 </tr>
     
         <tr >
-	<td>Armored Freighter</td>
+	<td class="unit-name">Armored Freighter</td>
 	<td><img class="unit-icon" src="images/units/SSTVII.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 250</td>
@@ -857,7 +888,7 @@ td {
 </tr>
     
         <tr  id="unit-id-21" >
-	<td>Bulk Hauler</td>
+	<td class="unit-name">Bulk Hauler</td>
 	<td><img class="unit-icon" src="images/units/21.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 4</td>
 	<td><img src="images/resources/cred.png"/> 300</td>
@@ -910,7 +941,7 @@ td {
 </tr>
     
         <tr >
-	<td>Armored Bulk Hauler</td>
+	<td class="unit-name">Armored Bulk Hauler</td>
 	<td><img class="unit-icon" src="images/units/SSBHII.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 350</td>
@@ -957,7 +988,7 @@ td {
 </tr>
     
         <tr  id="unit-id-22" >
-	<td>Starbase</td>
+	<td class="unit-name">Starbase</td>
 	<td><img class="unit-icon" src="images/units/22.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 3</td>
 	<td><img src="images/resources/cred.png"/> 0</td>
@@ -1013,7 +1044,7 @@ td {
 </tr>
     
         <tr >
-	<td>Meson Starbase</td>
+	<td class="unit-name">Meson Starbase</td>
 	<td><img class="unit-icon" src="images/units/SBII.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 0</td>
@@ -1067,7 +1098,7 @@ td {
 </tr>
     
         <tr  id="unit-id-23" >
-	<td>Submarine</td>
+	<td class="unit-name">Submarine</td>
 	<td><img class="unit-icon" src="images/units/23.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 80</td>
@@ -1115,7 +1146,7 @@ td {
 </tr>
     
         <tr  id="unit-id-24" >
-	<td>Battleship</td>
+	<td class="unit-name">Battleship</td>
 	<td><img class="unit-icon" src="images/units/24.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 3</td>
 	<td><img src="images/resources/cred.png"/> 120</td>
@@ -1166,7 +1197,7 @@ td {
 </tr>
     
         <tr  id="unit-id-25" >
-	<td>Destroyer</td>
+	<td class="unit-name">Destroyer</td>
 	<td><img class="unit-icon" src="images/units/25.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 60</td>
@@ -1220,7 +1251,7 @@ td {
 </tr>
     
         <tr  id="unit-id-26" >
-	<td>Carrier</td>
+	<td class="unit-name">Carrier</td>
 	<td><img class="unit-icon" src="images/units/26.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 200</td>
@@ -1265,7 +1296,7 @@ td {
 </tr>
     
         <tr  id="unit-id-27" >
-	<td>Naval Transport</td>
+	<td class="unit-name">Naval Transport</td>
 	<td><img class="unit-icon" src="images/units/27.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 50</td>
@@ -1303,7 +1334,7 @@ td {
 </tr>
     
         <tr >
-	<td>Blademaster</td>
+	<td class="unit-name">Blademaster</td>
 	<td><img class="unit-icon" src="images/units/blade.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 0</td>
@@ -1368,7 +1399,7 @@ td {
 </tr>
     
         <tr  id="unit-id-48" >
-	<td>Dervish</td>
+	<td class="unit-name">Dervish</td>
 	<td><img class="unit-icon" src="images/units/48.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 30</td>
@@ -1421,7 +1452,7 @@ td {
 </tr>
     
         <tr  id="unit-id-49" >
-	<td>Spy</td>
+	<td class="unit-name">Spy</td>
 	<td><img class="unit-icon" src="images/units/spy.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 50</td>
@@ -1478,7 +1509,7 @@ td {
 </tr>
     
         <tr >
-	<td>Assassin</td>
+	<td class="unit-name">Assassin</td>
 	<td><img class="unit-icon" src="images/units/49.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 100</td>
@@ -1539,7 +1570,7 @@ td {
 </tr>
     
         <tr >
-	<td>Doppleganger</td>
+	<td class="unit-name">Doppleganger</td>
 	<td><img class="unit-icon" src="images/units/dop.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 200</td>
@@ -1600,7 +1631,7 @@ td {
 </tr>
     
         <tr  id="unit-id-51" >
-	<td>Officer Corp</td>
+	<td class="unit-name">Officer Corp</td>
 	<td><img class="unit-icon" src="images/units/51.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 3</td>
 	<td><img src="images/resources/cred.png"/> 50</td>
@@ -1648,7 +1679,7 @@ td {
 </tr>
     
         <tr  id="unit-id-52" >
-	<td>Clergy</td>
+	<td class="unit-name">Clergy</td>
 	<td><img class="unit-icon" src="images/units/52.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 0</td>
@@ -1692,7 +1723,7 @@ td {
 </tr>
     
         <tr  id="unit-id-53" >
-	<td>Engineer</td>
+	<td class="unit-name">Engineer</td>
 	<td><img class="unit-icon" src="images/units/53.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 4</td>
 	<td><img src="images/resources/cred.png"/> 50</td>
@@ -1741,7 +1772,7 @@ td {
 </tr>
     
         <tr  id="unit-id-54" >
-	<td>Special Forces</td>
+	<td class="unit-name">Special Forces</td>
 	<td><img class="unit-icon" src="images/units/54.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 3</td>
 	<td><img src="images/resources/cred.png"/> 30</td>
@@ -1792,7 +1823,7 @@ td {
 </tr>
     
         <tr >
-	<td>Cybercorp</td>
+	<td class="unit-name">Cybercorp</td>
 	<td><img class="unit-icon" src="images/units/cyber.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 50</td>
@@ -1845,7 +1876,7 @@ td {
 </tr>
     
         <tr  id="unit-id-56" >
-	<td>PTS Laser Canon</td>
+	<td class="unit-name">PTS Laser Canon</td>
 	<td><img class="unit-icon" src="images/units/56.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 3</td>
 	<td><img src="images/resources/cred.png"/> 100</td>
@@ -1897,7 +1928,7 @@ td {
 </tr>
     
         <tr >
-	<td>PTS Meson Canon</td>
+	<td class="unit-name">PTS Meson Canon</td>
 	<td><img class="unit-icon" src="images/units/PTSMESON.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 200</td>
@@ -1951,7 +1982,7 @@ td {
 </tr>
     
         <tr  id="unit-id-57" >
-	<td>PTS Missile Launcher</td>
+	<td class="unit-name">PTS Missile Launcher</td>
 	<td><img class="unit-icon" src="images/units/57.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 3</td>
 	<td><img src="images/resources/cred.png"/> 50</td>
@@ -1999,7 +2030,7 @@ td {
 </tr>
     
         <tr  id="unit-id-58" >
-	<td>Scout Tank</td>
+	<td class="unit-name">Scout Tank</td>
 	<td><img class="unit-icon" src="images/units/58.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 20</td>
@@ -2050,7 +2081,7 @@ td {
 </tr>
     
         <tr  id="unit-id-59" >
-	<td>Med Tank</td>
+	<td class="unit-name">Med Tank</td>
 	<td><img class="unit-icon" src="images/units/59.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 35</td>
@@ -2097,7 +2128,7 @@ td {
 </tr>
     
         <tr >
-	<td>Assault Tank</td>
+	<td class="unit-name">Assault Tank</td>
 	<td><img class="unit-icon" src="images/units/PITBULL.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 60</td>
@@ -2154,7 +2185,7 @@ td {
 </tr>
     
         <tr  id="unit-id-60" >
-	<td>Anti-infantry Tank</td>
+	<td class="unit-name">Anti-infantry Tank</td>
 	<td><img class="unit-icon" src="images/units/60.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 45</td>
@@ -2217,7 +2248,7 @@ td {
 </tr>
     
         <tr  id="unit-id-61" >
-	<td>Mega Tank</td>
+	<td class="unit-name">Mega Tank</td>
 	<td><img class="unit-icon" src="images/units/61.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 3</td>
 	<td><img src="images/resources/cred.png"/> 80</td>
@@ -2276,7 +2307,7 @@ td {
 </tr>
     
         <tr  id="unit-id-62" >
-	<td>Hover Tank</td>
+	<td class="unit-name">Hover Tank</td>
 	<td><img class="unit-icon" src="images/units/62.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 120</td>
@@ -2339,7 +2370,7 @@ td {
 </tr>
     
         <tr  id="unit-id-63" >
-	<td>Hover Tank Killer</td>
+	<td class="unit-name">Hover Tank Killer</td>
 	<td><img class="unit-icon" src="images/units/63.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 120</td>
@@ -2402,7 +2433,7 @@ td {
 </tr>
     
         <tr  id="unit-id-64" >
-	<td>Hover Anti Air</td>
+	<td class="unit-name">Hover Anti Air</td>
 	<td><img class="unit-icon" src="images/units/64.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 120</td>
@@ -2462,7 +2493,7 @@ td {
 </tr>
     
         <tr  id="unit-id-65" >
-	<td>Tank Killer</td>
+	<td class="unit-name">Tank Killer</td>
 	<td><img class="unit-icon" src="images/units/65.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 35</td>
@@ -2509,7 +2540,7 @@ td {
 </tr>
     
         <tr  id="unit-id-66" >
-	<td>Heavy Tank Killer</td>
+	<td class="unit-name">Heavy Tank Killer</td>
 	<td><img class="unit-icon" src="images/units/66.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 80</td>
@@ -2574,7 +2605,7 @@ td {
 </tr>
     
         <tr  id="unit-id-67" >
-	<td>SP Anti Air</td>
+	<td class="unit-name">SP Anti Air</td>
 	<td><img class="unit-icon" src="images/units/67.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 80</td>
@@ -2618,7 +2649,7 @@ td {
 </tr>
     
         <tr  id="unit-id-68" >
-	<td>SP Artillery</td>
+	<td class="unit-name">SP Artillery</td>
 	<td><img class="unit-icon" src="images/units/68.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 80</td>
@@ -2665,7 +2696,7 @@ td {
 </tr>
     
         <tr  id="unit-id-69" >
-	<td>Assault Gun</td>
+	<td class="unit-name">Assault Gun</td>
 	<td><img class="unit-icon" src="images/units/69.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 70</td>
@@ -2720,7 +2751,7 @@ td {
 </tr>
     
         <tr  id="unit-id-70" >
-	<td>Rocket Artillery</td>
+	<td class="unit-name">Rocket Artillery</td>
 	<td><img class="unit-icon" src="images/units/70.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 65</td>
@@ -2772,7 +2803,7 @@ td {
 </tr>
     
         <tr  id="unit-id-71" >
-	<td>Pestulator Artillery</td>
+	<td class="unit-name">Pestulator Artillery</td>
 	<td><img class="unit-icon" src="images/units/71.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 3</td>
 	<td><img src="images/resources/cred.png"/> 90</td>
@@ -2828,7 +2859,7 @@ td {
 </tr>
     
         <tr  id="unit-id-72" >
-	<td>Stealth Tank</td>
+	<td class="unit-name">Stealth Tank</td>
 	<td><img class="unit-icon" src="images/units/72.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 100</td>
@@ -2883,7 +2914,7 @@ td {
 </tr>
     
         <tr  id="unit-id-73" >
-	<td>Gunship</td>
+	<td class="unit-name">Gunship</td>
 	<td><img class="unit-icon" src="images/units/73.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 150</td>
@@ -2937,7 +2968,7 @@ td {
 </tr>
     
         <tr  id="unit-id-74" >
-	<td>Atmos Fighter</td>
+	<td class="unit-name">Atmos Fighter</td>
 	<td><img class="unit-icon" src="images/units/74.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 75</td>
@@ -2988,7 +3019,7 @@ td {
 </tr>
     
         <tr >
-	<td>Morph Fighter</td>
+	<td class="unit-name">Morph Fighter</td>
 	<td><img class="unit-icon" src="images/units/WYVERN.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 95</td>
@@ -3041,7 +3072,7 @@ td {
 </tr>
     
         <tr  id="unit-id-75" >
-	<td>Divebomber</td>
+	<td class="unit-name">Divebomber</td>
 	<td><img class="unit-icon" src="images/units/75.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 65</td>
@@ -3092,7 +3123,7 @@ td {
 </tr>
     
         <tr >
-	<td>Morph Divebomber</td>
+	<td class="unit-name">Morph Divebomber</td>
 	<td><img class="unit-icon" src="images/units/BANSHEEII.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 85</td>
@@ -3145,7 +3176,7 @@ td {
 </tr>
     
         <tr  id="unit-id-76" >
-	<td>Strategic Bomber</td>
+	<td class="unit-name">Strategic Bomber</td>
 	<td><img class="unit-icon" src="images/units/76.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 3</td>
 	<td><img src="images/resources/cred.png"/> 100</td>
@@ -3196,7 +3227,7 @@ td {
 </tr>
     
         <tr  id="unit-id-77" >
-	<td>Marauder Legion</td>
+	<td class="unit-name">Marauder Legion</td>
 	<td><img class="unit-icon" src="images/units/77.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 150</td>
@@ -3258,7 +3289,7 @@ td {
 </tr>
     
         <tr  id="unit-id-78" >
-	<td>Ranger Legion</td>
+	<td class="unit-name">Ranger Legion</td>
 	<td><img class="unit-icon" src="images/units/78.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 10</td>
@@ -3323,7 +3354,7 @@ td {
 </tr>
     
         <tr  id="unit-id-79" >
-	<td>Xyll Warbeast</td>
+	<td class="unit-name">Xyll Warbeast</td>
 	<td><img class="unit-icon" src="images/units/79.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 10</td>
@@ -3378,7 +3409,7 @@ td {
 </tr>
     
         <tr  id="unit-id-80" >
-	<td>Shock Legion</td>
+	<td class="unit-name">Shock Legion</td>
 	<td><img class="unit-icon" src="images/units/80.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 20</td>
@@ -3437,7 +3468,7 @@ td {
 </tr>
     
         <tr >
-	<td>Gen Warrior Legion</td>
+	<td class="unit-name">Gen Warrior Legion</td>
 	<td><img class="unit-icon" src="images/units/gen.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 20</td>
@@ -3496,7 +3527,7 @@ td {
 </tr>
     
         <tr  id="unit-id-81" >
-	<td>Assault Legion</td>
+	<td class="unit-name">Assault Legion</td>
 	<td><img class="unit-icon" src="images/units/81.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 30</td>
@@ -3555,7 +3586,7 @@ td {
 </tr>
     
         <tr  id="unit-id-82" >
-	<td>Armor Legion</td>
+	<td class="unit-name">Armor Legion</td>
 	<td><img class="unit-icon" src="images/units/82.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 20</td>
@@ -3614,7 +3645,7 @@ td {
 </tr>
     
         <tr >
-	<td>Chem Shock Legion</td>
+	<td class="unit-name">Chem Shock Legion</td>
 	<td><img class="unit-icon" src="images/units/grims.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 20</td>
@@ -3669,7 +3700,7 @@ td {
 </tr>
     
         <tr  id="unit-id-83" >
-	<td>Infantry Legion</td>
+	<td class="unit-name">Infantry Legion</td>
 	<td><img class="unit-icon" src="images/units/83.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 5</td>
@@ -3716,7 +3747,7 @@ td {
 </tr>
     
         <tr >
-	<td>Heavy Inf Legion</td>
+	<td class="unit-name">Heavy Inf Legion</td>
 	<td><img class="unit-icon" src="images/units/hvyinf.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 15</td>
@@ -3775,7 +3806,7 @@ td {
 </tr>
     
         <tr >
-	<td>Fanatic Legion</td>
+	<td class="unit-name">Fanatic Legion</td>
 	<td><img class="unit-icon" src="images/units/fan.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 3</td>
 	<td><img src="images/resources/cred.png"/> 1</td>
@@ -3830,7 +3861,7 @@ td {
 </tr>
     
         <tr  id="unit-id-84" >
-	<td>Militia Legion</td>
+	<td class="unit-name">Militia Legion</td>
 	<td><img class="unit-icon" src="images/units/84.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 5</td>
@@ -3871,7 +3902,7 @@ td {
 </tr>
     
         <tr >
-	<td>Tracker Legion</td>
+	<td class="unit-name">Tracker Legion</td>
 	<td><img class="unit-icon" src="images/units/track.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 1</td>
 	<td><img src="images/resources/cred.png"/> 5</td>
@@ -3915,7 +3946,7 @@ td {
 </tr>
     
         <tr  id="unit-id-85" >
-	<td>Anti-Aircraft</td>
+	<td class="unit-name">Anti-Aircraft</td>
 	<td><img class="unit-icon" src="images/units/85.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 10</td>
@@ -3959,7 +3990,7 @@ td {
 </tr>
     
         <tr  id="unit-id-86" >
-	<td>Anti-Tank Gun</td>
+	<td class="unit-name">Anti-Tank Gun</td>
 	<td><img class="unit-icon" src="images/units/86.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 10</td>
@@ -4006,7 +4037,7 @@ td {
 </tr>
     
         <tr  id="unit-id-87" >
-	<td>Artillery</td>
+	<td class="unit-name">Artillery</td>
 	<td><img class="unit-icon" src="images/units/87.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 10</td>
@@ -4053,7 +4084,7 @@ td {
 </tr>
     
         <tr  id="unit-id-88" >
-	<td>Plague Bomb</td>
+	<td class="unit-name">Plague Bomb</td>
 	<td><img class="unit-icon" src="images/units/88.png"/></td>
 	<td><span class="grayscale">&#x231b</span> 2</td>
 	<td><img src="images/resources/cred.png"/> 0</td>

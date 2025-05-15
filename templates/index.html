@@ -58,13 +58,44 @@ td {
 .behavior-stat {
 	font-size: 0.8em;
 }
+.dhide {
+	display: none !important;
+}
+.unit-name {}
 </style>
+<script>
+
+function updateSearch(event) {
+  const tableBody = document.querySelector("tbody");
+  const textbox = document.getElementById("search");
+  const search = textbox.value.toLowerCase().trim();
+
+  // Reset all rows to visible
+  tableBody.querySelectorAll("tr").forEach(row => {
+    row.classList.toggle("dhide", false);
+  });
+
+  // If search term exists, hide non-matching rows
+  if (search.length > 0) {
+    const terms = search.split(",").map(term => term.trim()).filter(term => term.length > 0);
+    tableBody.querySelectorAll("tr").forEach(row => {
+      const nameCell = row.querySelector(".unit-name");
+      if (nameCell) {
+        const name = nameCell.textContent.toLowerCase();
+        if (!terms.some(term => name.includes(term))) {
+          row.classList.toggle("dhide", true);
+        }
+      }
+    });
+  }
+}
+</script>
 <head>
     <title>EFS Units</title>
 </head>
 <body>
-
-	<table class="striped tight-table container">
+	<input type="text" id="search" class="search_input" placeholder="Filter units by comma-separated names: tank, infantry, armor legion" aria-label="Filer units by name" onkeyup="updateSearch(event)">
+	<table id="main_container" class="striped tight-table container">
 		{% for header in headers %}
 			<th>{{ header }}</th>
 		{% endfor %}
