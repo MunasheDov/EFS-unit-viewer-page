@@ -182,8 +182,10 @@ for unit in units:
 	cur["costs"] = {}
 	if enable_combat_stats:
 		cur["combat"] = format_combat(unit)
+		
 	if enable_behavior_stats:
 		cur["behavior"] = format_behavior(unit)
+		cur["behavior"]["rank"] = unit["stats"]["rank"]
 
 
 
